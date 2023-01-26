@@ -11,7 +11,7 @@ import csso from 'postcss-csso';
 import terser from 'gulp-terser';
 import svgo from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
-import {deleteAsync as del} from 'del';
+import del, { deleteAsync } from 'del'
 
 // Styles
 
@@ -117,7 +117,8 @@ const copy = (done) => {
 
 //clean
 const clean  = () => {
-  return del('build');
+  const { deleteAsync } = del;
+  return del ('build');
   };
 //clean
 
